@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw a Card</title>
+    <link href="./style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+   <header>
+       <h1>Pick a Card!</h1>
+    </header>
+    
+    <main>
+        <div class="drawDisplay">
+            <h2>Draw a card and beat the computer</h2>
+            <br>
+            <button class="button" id="draw" type="button">Take One</button>
+        </div>
+
+        <div class="cardDisplay">
+            <div class="player">
+                <h3>You Drew:</h3>
+                <p id="p_hand"></p> 
+            </div>
+
+            <div class="computer">
+                <h3>Computer Drew:</h3>
+                <p id="c_hand"></p>
+            </div>
+
+            <div class="winnerDisplay">
+                <p id="whoWon"></p>
+            </div>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>

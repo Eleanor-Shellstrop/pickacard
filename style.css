@@ -1,0 +1,37 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 50px;
+    margin: 50px 5%;
+}
+
+.drawDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid grey;
+    padding: 30px 5%;
+    margin: 20px 5%;
+}
+
+/* .cardDisplay{
+    display: flex;
+} */
+
+.player, 
+.computer,
+.winnerDisplay {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid grey;
+    padding: 5%;
+    margin: 5%;
+}
