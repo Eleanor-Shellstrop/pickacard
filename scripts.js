@@ -68,7 +68,7 @@ dealHand.addEventListener ('click', () => {
     //Draw random cards to player and computer:
     //playerDraw and computerDraw will assign the array from pickCard() that holds
     //both one object and one string.
-    //I assigned the object [index 0] to playerHand and playerDraw
+    //I assigned the object [index 0] to playerHand and computerHand
     //and the string [index 1] in the innerText.html
     const playerDraw = pickCard(cards);
     const playerHand = playerDraw[0];
