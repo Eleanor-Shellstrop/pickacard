@@ -27,24 +27,23 @@ function deckBuilder () {
 
 
 //Randomly pick a card from the deck
-const card = {"value": null, "suit": null, "weight": null};
 
 function pickCard(cards) {
     //Index starts at zero, so "51" draws one of the 52 cards
     const random = Math.floor(Math.random() * 51);  
     //The card picked will hold all the {cards.properties} unchanged
-    card.value = cards[random].value;
-    card.suit = cards[random].suit;
-    card.weight = cards[random].weight;        
-    return card;
+    let cardValue = cards[random].value;
+    let cardSuit = cards[random].suit;
+    let cardWeight = cards[random].weight; 
+    return [{cardValue, cardSuit, cardWeight}, cardValue + " of " + cardSuit];
 }
+
 
 const cards = deckBuilder();
 
-
-//  Check the function
-//  console.log(pickCard(cards));
-
+//Check the pickCard function
+//console.log(pickCard(cards));
+console.log(pickCard(cards));
 
 
 
@@ -61,37 +60,36 @@ const whoWon = document.getElementById('whoWon');
 const playAgain = document.getElementById('playAgainButton');
 
 
+   
+
 //Function called when "Take One" button is clicked
 
 dealHand.addEventListener ('click', () => {
-    //Draw random cards to player and computer
+    //Draw random cards to player and computer:
+    //playerDraw and computerDraw will assign the array from pickCard() that holds
+    //both one object and one string.
+    //I assigned the object [index 0] to playerHand and playerDraw
+    //and the string [index 1] in the innerText.html
     const playerDraw = pickCard(cards);
+    const playerHand = playerDraw[0];
     const computerDraw = pickCard(cards);
-    
+    const computerHand = computerDraw[0];
+
+    //Get the "weight" of the cards in a variable
+    const playerWeight = playerHand.cardWeight;
+    const computerWeight = computerHand.cardWeight;
     //Display the cards in html
-    playerHandDisplay.innerText = card.value + card.suit;
-    computerHandDisplay.innerText = card.value + " " + card.suit;
+    playerHandDisplay.innerText = playerDraw[1];
+    computerHandDisplay.innerText = computerDraw[1];
 
-    playerValue = card.weight;
-    computerValue = card.weight;
-
-    // Determine winner----NOT WORKING!
-    function compareCards (playerValue, computerValue) {
-        if (playerValue >= computerValue) {
-            return true;
-        } else {
-            return false;
-        }
-    };
-
-    //Display winner
-    if (compareCards === true) {
-        whoWon.innerText = 'You win!';
+    //Display the winner
+    if (playerWeight >= computerWeight) {
+        whoWon.innerText = 'You win!'; 
     } else {
-        whoWon.innerText = 'Computer wins';
-    }
+        whoWon.innerText = 'Computer wins';  
+    };
+        
 });
-
 
 //Function called to reset all fields when "Play Again" button is clicked
 
