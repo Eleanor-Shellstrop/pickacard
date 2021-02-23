@@ -18,13 +18,13 @@ header {
     justify-content: center;
     align-items: center;
     border: 3px solid grey;
-    padding: 30px 5%;
-    margin: 20px 5%;
+    padding: 5%;
+    margin: 5%;
 }
 
-/* .cardDisplay{
+.cardDisplay{
     display: flex;
-} */
+} 
 
 .player, 
 .computer,
@@ -34,4 +34,23 @@ header {
     border: 2px solid grey;
     padding: 5%;
     margin: 5%;
+}
+
+.player, 
+.computer {
+    flex: 0 1 calc(50% - 10px);
+}
+
+p {
+    display: flex;
+}
+
+#p_hand, 
+#c_hand {
+    align-items: baseline;
+}
+
+.winnerDisplay {
+    justify-content: center;
+    align-items: center;
 }
