@@ -4,12 +4,13 @@
 
 header {
     background-color: black;
+    box-shadow: 0 0 10px black;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 30px 50px;
-    margin: 50px 5%;
+    margin: 2% 5%;
 }
 
 .drawDisplay {
@@ -27,30 +28,52 @@ header {
 } 
 
 .player, 
-.computer,
-.winnerDisplay {
+.computer {
     display: flex;
     flex-direction: column;
     border: 2px solid grey;
-    padding: 5%;
-    margin: 5%;
+    padding: 0px 10px 0px 10px;
+    margin: 5% 2%;
+    flex: 1 1 calc(50% - 10px);
 }
 
-.player, 
-.computer {
-    flex: 0 1 calc(50% - 10px);
+.player {
+    justify-content: flex-end;
+}
+
+#ph3, 
+#ch3 {
+    justify-self: first baseline;
 }
 
 p {
     display: flex;
+    align-items: baseline;
 }
 
 #p_hand, 
 #c_hand {
-    align-items: baseline;
+    border: 1px solid lightgrey;
+    padding: 30px calc(5px - 50%);
+    margin: 0 25% 10%;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .winnerDisplay {
+    padding: 10px 10%;
     justify-content: center;
     align-items: center;
+    border: 1px solid lightgrey;
+    box-shadow: 0 0 15px lightgrey;
+    margin-bottom: 3%;
+    width: 70%;
+    display: flex;
 }

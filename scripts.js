@@ -5,8 +5,8 @@
 
 //Create a deck
 
-function deckBuilder () {
-    const suits = ['Hearts', 'Diamonds', 'Spades', 'Clovers'];
+function deckBuilder () {  
+    const suits = ['♥︎', '♦︎', '♠︎', '♣︎'];
     const values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
     const cards = [];
         for (let i = 0; i < suits.length; i++) {            //Iterate through suits
@@ -35,7 +35,7 @@ function pickCard(cards) {
     let cardValue = cards[random].value;
     let cardSuit = cards[random].suit;
     let cardWeight = cards[random].weight; 
-    return [{cardValue, cardSuit, cardWeight}, cardValue + " of " + cardSuit];
+    return [{cardValue, cardSuit, cardWeight}, cardValue + " " + cardSuit];
 }
 
 
@@ -78,6 +78,21 @@ dealHand.addEventListener ('click', () => {
     //Get the "weight" of the cards in a variable
     const playerWeight = playerHand.cardWeight;
     const computerWeight = computerHand.cardWeight;
+    
+    //Change color to red if hearts or diamonds for both player and computer cards
+    
+    if (playerHand.cardSuit == '♥︎' || playerHand.cardSuit == '♦︎') {
+        p_hand.style.color = 'red';
+    } else {
+        p_hand.style.color = 'black';
+    }; 
+
+    if (computerHand.cardSuit == '♥︎' || computerHand.cardSuit == '♦︎') {
+        c_hand.style.color = 'red';
+    } else {
+        c_hand.style.color = 'black';
+    }; 
+
     //Display the cards in html
     playerHandDisplay.innerText = playerDraw[1];
     computerHandDisplay.innerText = computerDraw[1];
