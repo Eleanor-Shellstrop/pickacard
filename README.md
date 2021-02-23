@@ -6,10 +6,14 @@ Click the "Take One" button to be deal a card to you and the computer.
 If your card is the same value or higher than the computer's card, you win!
 
 Numbered cards are weighted as the value shown, royals are:
-    * Jack: 11
-    * Queen: 12
-    * King: 13
-    * Ace: 14
+
+  * Jack: 11
+  
+  * Queen: 12
+
+  * King: 13
+
+  * Ace: 14
 
 Click the "Play Again" button to reset the fields, and click "Take One" to be dealt a new card.
 
