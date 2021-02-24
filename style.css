@@ -1,7 +1,13 @@
+/*=========================================================
+---------------------- MOBILE STYLES ----------------------
+=========================================================*/
+
+/* GENERAL */
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* HEADING */
 header {
     background-color: black;
     box-shadow: 0 0 10px black;
@@ -13,6 +19,8 @@ header {
     margin: 5% 2%;
 }
 
+
+/* DRAW CARD AREA */
 .drawDisplay {
     display: flex;
     flex-direction: column;
@@ -22,6 +30,9 @@ header {
     padding: 5%;
     margin: 5% 2%;
 }
+
+
+/* CARD DISPLAY AREA */
 
 .cardDisplay{
     display: flex;
@@ -53,13 +64,14 @@ p {
 
 #p_hand, 
 #c_hand {
-    border: 1px solid lightgrey;
+    border: 1px solid gray;
     padding: 30px calc(5px - 50%);
     margin: 0 25% 10%;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
+/* GAME RESULTS AREA */
 .results {
     display: flex;
     flex-direction: column;
@@ -76,4 +88,39 @@ p {
     margin: 5% 2%;
     width: 70%;
     display: flex;
+}
+
+/* BUTTONS */
+
+.button {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5%;
+    font-size: 1.5em;
+}
+
+/*=========================================================
+---------------------- MEDIA QUERIES ----------------------
+=========================================================*/
+
+@media (min-width: 700px) {
+    .drawDisplay {
+        padding: 2%;
+        margin: 3% 2%;
+    }
+    .player,
+    .computer {
+        min-height: 300px;
+        display: block;
+        margin: 3% 2%;
+    }
+    h3 {
+        font-size: 2em;
+    }
+    #p_hand, #c_hand {
+        min-height: 200px;
+        align-items: center;
+        font-size: 3em;
+    }
 }
