@@ -15,30 +15,31 @@
     <main>
         <div class="drawDisplay">
             <h2>Draw a card and beat the computer</h2>
-            <br>
+            
             <button class="button" id="drawCardButton" type="button">Take One</button>
         </div>
+        
+            <div class="cardDisplay">
+                <div class="player">
+                    <h3 id="ph3">Your Card:</h3>
+                    <p id="p_hand"></p> 
+                </div>
 
-        <div class="cardDisplay">
-            <div class="player">
-                <h3 id="ph3">Your Card:</h3>
-                <p id="p_hand"></p> 
+                <div class="computer">
+                    <h3 id="ch3">Computer Card:</h3>
+                    <p id="c_hand"></p>
+                </div>
             </div>
-
-            <div class="computer">
-                <h3 id="ch3">Computer Card:</h3>
-                <p id="c_hand"></p>
+            <div class="results">
+                <div class="winnerDisplay">
+                    <h3 id="whoWon"></h3>
+                </div>
             </div>
-        </div>
-        <div class="results">
-            <div class="winnerDisplay">
-                <h3 id="whoWon"></h3>
-            </div>
-
+       
             <div class="playAgain">
                 <button class="button" id="playAgainButton" type="button">Play Again</button>
             </div>
-        </div>
+        
     </main>
     <script src="scripts.js"></script>
 </body>

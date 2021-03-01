@@ -7,6 +7,14 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    background-image: url("blackjack.png");
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(245, 245, 245, 65%);
+    background-blend-mode: overlay;
+}
+
 /* HEADING */
 header {
     background-color: black;
@@ -29,6 +37,7 @@ header {
     border: 3px solid grey;
     padding: 5%;
     margin: 5% 2%;
+    background-color: rgba(245, 245, 245, 85%);
 }
 
 
@@ -46,6 +55,7 @@ header {
     padding: 0px 10px 0px 10px;
     margin: 5% 2%;
     flex: 1 1 calc(50% - 10px);
+    background-color: rgba(245, 245, 245, 85%);
 }
 
 .player {
@@ -77,6 +87,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 .winnerDisplay {
@@ -88,6 +99,12 @@ p {
     margin: 5% 2%;
     width: 70%;
     display: flex;
+    background-color: rgba(245, 245, 245, 85%);
+}
+
+.playAgain{
+    display: flex;
+    justify-content: center;
 }
 
 /* BUTTONS */
@@ -124,3 +141,74 @@ p {
         font-size: 3em;
     }
 }
+
+@media (min-width: 1200px) {
+    header {
+        grid-area: head;
+        margin: 0 auto;
+    }
+    main{
+        display: block;
+    }
+    .drawDisplay {
+        grid-area: draw;
+        margin: 10px;
+    }
+    .cardDisplay {
+        grid-area: card;
+    }
+    .results {
+        grid-area: rslt;
+    }
+    .winnerDisplay{
+        min-height: 350px;
+    }
+    .playAgain {
+        grid-area: redo;
+        display: flex;
+        justify-content: center;
+        margin: 80% 20%;
+    }
+    
+    main{
+        display: grid;
+        grid-template-rows: auto ;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: 
+          
+            "draw draw draw draw draw draw"
+            ". . . . . . "
+            "card card card card rslt redo"
+            "card card card card rslt redo"
+            ". . . . . ."
+    }
+}
+
+/* 
+@media (min-width: 800px) {
+    header {
+        margin: 2% 2%;
+        padding: 1%;
+    }
+    .drawDisplay {
+        flex-direction: row;
+        margin-top: 1%;
+    }
+    .drawDisplay .button {
+        margin-left: auto;
+    } 
+    .main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .player,
+    .computer,
+    .winnerDisplay {
+        margin-top: auto;
+        margin-bottom: auto;
+        flex: 1 1 auto;
+    }
+   
+} */
