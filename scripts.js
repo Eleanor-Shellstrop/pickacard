@@ -22,10 +22,6 @@ function deckBuilder () {
 }
 
 
-//  Check the deck
-//console.log(deckBuilder());
-
-
 //Randomly pick a card from the deck
 
 function pickCard(cards) {
@@ -43,7 +39,7 @@ const cards = deckBuilder();
 
 //Check the pickCard function
 //console.log(pickCard(cards));
-console.log(pickCard(cards));
+
 
 
 
@@ -58,7 +54,6 @@ const playerHandDisplay = document.getElementById('p_hand');
 const computerHandDisplay =  document.getElementById('c_hand');
 const whoWon = document.getElementById('whoWon');
 const playAgain = document.getElementById('playAgainButton');
-
 
    
 
@@ -105,12 +100,3 @@ dealHand.addEventListener ('click', () => {
     };
         
 });
-
-//Function called to reset all fields when "Play Again" button is clicked
-
-playAgain.addEventListener ('click', () => {
-    //Reset fields to blank
-    playerHandDisplay.innerText = '';
-    computerHandDisplay.innerText = '';
-    whoWon.innerText = '';
-})

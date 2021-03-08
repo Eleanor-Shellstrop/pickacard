@@ -8,11 +8,17 @@
 }
 
 body {
-    background-image: url("blackjack.png");
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(245, 245, 245, 65%);
-    background-blend-mode: overlay;
+        background-color: teal;
+        width: 100%;
+        height: 100%;
+        min-width: fit-content;
+        min-height: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: inset 0px 0px 100px darkslategrey, 
+                    inset 0px 0px 30px black;
+        margin: 0 auto;
 }
 
 /* HEADING */
@@ -74,11 +80,18 @@ p {
 
 #p_hand, 
 #c_hand {
-    border: 1px solid gray;
-    padding: 30px calc(5px - 50%);
+    min-width: 50px;
+    min-height: 100px;
+    /* padding: 30px calc(5px - 50%); */
     margin: 0 25% 10%;
     justify-content: center;
-    font-size: 1.5rem;
+    align-items: center;
+    font-size: 2rem;
+    border: 4px solid goldenrod;
+    background-color: white;
+    box-shadow: 7px 5px 10px black, 
+                -7px 5px 10px rgb(88, 87, 87), 
+                inset 0px 0px 20px gray;
 }
 
 /* GAME RESULTS AREA */
@@ -102,10 +115,14 @@ p {
     background-color: rgba(245, 245, 245, 85%);
 }
 
-.playAgain{
-    display: flex;
-    justify-content: center;
+canvas {
+    position: absolute;
+    z-index: 100;
+    background-color: transparent;
+    height: 300px;
+    width: 100%;
 }
+
 
 /* BUTTONS */
 
@@ -121,7 +138,7 @@ p {
 ---------------------- MEDIA QUERIES ----------------------
 =========================================================*/
 
-@media (min-width: 700px) {
+@media (min-width: 475px) {
     .drawDisplay {
         padding: 2%;
         margin: 3% 2%;
@@ -129,23 +146,28 @@ p {
     .player,
     .computer {
         min-height: 300px;
-        display: block;
         margin: 3% 2%;
-    }
-    h3 {
-        font-size: 2em;
-    }
-    #p_hand, #c_hand {
-        min-height: 200px;
+        justify-content: center;
         align-items: center;
-        font-size: 3em;
+    }
+
+    #p_hand, #c_hand {
+        width: 150px;
+        height: 250px;
+        align-items: center;
+        font-size: 4rem;
     }
 }
 
 @media (min-width: 1200px) {
+    body {
+        justify-content: start;
+    }
     header {
         grid-area: head;
-        margin: 0 auto;
+        margin: 10px;
+        position: fixed;
+        height: 103px;
     }
     main{
         display: block;
@@ -161,13 +183,8 @@ p {
         grid-area: rslt;
     }
     .winnerDisplay{
-        min-height: 350px;
-    }
-    .playAgain {
-        grid-area: redo;
-        display: flex;
-        justify-content: center;
-        margin: 80% 20%;
+        min-height: 300px;
+        font-size: 2rem;
     }
     
     main{
@@ -178,37 +195,8 @@ p {
           
             "draw draw draw draw draw draw"
             ". . . . . . "
-            "card card card card rslt redo"
-            "card card card card rslt redo"
+            "card card card card rslt rslt"
+            "card card card card rslt rslt"
             ". . . . . ."
     }
 }
-
-/* 
-@media (min-width: 800px) {
-    header {
-        margin: 2% 2%;
-        padding: 1%;
-    }
-    .drawDisplay {
-        flex-direction: row;
-        margin-top: 1%;
-    }
-    .drawDisplay .button {
-        margin-left: auto;
-    } 
-    .main {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-
-    .player,
-    .computer,
-    .winnerDisplay {
-        margin-top: auto;
-        margin-bottom: auto;
-        flex: 1 1 auto;
-    }
-   
-} */
