@@ -1,8 +1,11 @@
-**PICK A CARD**
+## PICK A CARD
+
+# Demo
+https://eleanor-shellstrop.github.io/pickacard/
 
 This is a small program I built to practice JavaScript functions and iterators.
 
-Click the "Take One" button to be deal a card to you and the computer. 
+Click the "Take One" button to deal to you and the computer. 
 If your card is the same value or higher than the computer's card, you win!
 
 Numbered cards are weighted as the value shown, royals are:

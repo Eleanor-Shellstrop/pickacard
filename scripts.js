@@ -34,13 +34,7 @@ function pickCard(cards) {
     return [{cardValue, cardSuit, cardWeight}, cardValue + " " + cardSuit];
 }
 
-
 const cards = deckBuilder();
-
-//Check the pickCard function
-//console.log(pickCard(cards));
-
-
 
 
 //.......................................................................................
@@ -65,8 +59,8 @@ dealHand.addEventListener ('click', () => {
     //Reset any glow effects from previous hand
     reset();
     //Draw random cards to player and computer:
-    //playerDraw and computerDraw will assign the array from pickCard() that holds
-    //both one object and one string.
+    //playerDraw and computerDraw will assign the array returned from "pickCard()" that holds
+    //both {one object} and "one string."
     //I assigned the object [index 0] to playerHand and computerHand
     //and the string [index 1] in the innerText.html
     const playerDraw = pickCard(cards);
@@ -103,6 +97,7 @@ dealHand.addEventListener ('click', () => {
         whoWon.innerText = 'Computer wins';  
     };
     
+    //Toggle the border glow to the winner
     if (whoWon.innerText == 'You win!'){
         winner.classList.toggle('you-win');
         player.classList.toggle('you-win');
@@ -116,6 +111,7 @@ dealHand.addEventListener ('click', () => {
     
 });
 
+//Reset the glowing winner border
 function reset () {
     computer.classList.remove('you-win');
     winner.classList.remove('you-win');
