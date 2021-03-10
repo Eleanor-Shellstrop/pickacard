@@ -54,12 +54,16 @@ const playerHandDisplay = document.getElementById('p_hand');
 const computerHandDisplay =  document.getElementById('c_hand');
 const whoWon = document.getElementById('whoWon');
 const playAgain = document.getElementById('playAgainButton');
-
+const player = document.querySelector('.player');
+const computer = document.querySelector('.computer');
+const winner = document.querySelector('.winnerDisplay')
    
 
 //Function called when "Take One" button is clicked
 
 dealHand.addEventListener ('click', () => {
+    //Reset any glow effects from previous hand
+    reset();
     //Draw random cards to player and computer:
     //playerDraw and computerDraw will assign the array from pickCard() that holds
     //both one object and one string.
@@ -98,5 +102,23 @@ dealHand.addEventListener ('click', () => {
     } else {
         whoWon.innerText = 'Computer wins';  
     };
-        
+    
+    if (whoWon.innerText == 'You win!'){
+        winner.classList.toggle('you-win');
+        player.classList.toggle('you-win');
+        computer.classList.remove('you-win');
+    } 
+    if (whoWon.innerText == 'Computer wins') {
+        computer.classList.toggle('you-win');
+        winner.classList.remove('you-win');
+        player.classList.remove('you-win');
+    } 
+    
 });
+
+function reset () {
+    computer.classList.remove('you-win');
+    winner.classList.remove('you-win');
+    player.classList.remove('you-win');
+}
+
